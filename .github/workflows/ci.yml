@@ -1,0 +1,13 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a command
+        run: echo "CI workflow is running"   
