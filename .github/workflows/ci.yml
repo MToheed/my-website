@@ -5,6 +5,10 @@ on:
     branches:
       - master
 
+  pull-request:
+    branches:
+      - master
+
 jobs:
   check:
     runs-on: ubuntu-latest
