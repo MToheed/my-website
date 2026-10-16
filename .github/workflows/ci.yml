@@ -21,6 +21,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Access secret securely
+        env:
+          DEMO_SECRET: ${{ secrets.DEMO_SECRET }}
+        run: |
+          if [ -n "$DEMO_SECRET" ]; then
+            echo "Secret is available"
+          else
+            echo "Secret is missing"
+            exit 1
+          fi
+
       - name: Display variables
         run: |
           echo "Environment $APP_ENV"
