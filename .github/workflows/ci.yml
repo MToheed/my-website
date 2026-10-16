@@ -24,6 +24,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Build Docker image
+        run: docker build -t my-website:v1 .
+
       - name: Access secret securely
         env:
           DEMO_SECRET: ${{ secrets.DEMO_SECRET }}
