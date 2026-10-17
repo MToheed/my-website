@@ -29,12 +29,16 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}   
-       
+
       - name: Build Docker image
-        run: docker build -t toheedwajid/my-website:v1 .
+        run: |
+          docker build -t toheedwajid/my-website:v1 .
+          docker tag toheedwajid/my-website:v1 toheedwajid/my-website:v2
 
       - name: Push Docker image
-        run: docker push toheedwajid/my-website:v1   
+        run: |
+          docker push toheedwajid/my-website:v1
+          docker push toheedwajid/my-website:v2
 
       - name: Access secret securely
         env:
