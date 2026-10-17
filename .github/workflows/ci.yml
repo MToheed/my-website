@@ -31,7 +31,10 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}   
        
       - name: Build Docker image
-        run: docker build -t toheedwajid/my-website:v1 .   
+        run: docker build -t toheedwajid/my-website:v1 .
+
+      - name: Push Docker image
+        run: docker push toheedwajid/my-website:v1   
 
       - name: Access secret securely
         env:
