@@ -1,3 +1,3 @@
-FROM nginx:nonexistent
+FROM nginx:alpine
 COPY . /usr/share/nginx/html
 EXPOSE 80
