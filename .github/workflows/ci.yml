@@ -63,5 +63,4 @@ jobs:
           test -f index.html
           test -f style.css
           test -f contact.html
-          echo "Build check passed"
-          exit 1       
+          echo "Build check passed"       
